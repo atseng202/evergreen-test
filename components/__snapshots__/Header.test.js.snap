@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header smoke and snapshot tests matches Header snapshot 1`] = `
+<DocumentFragment>
+  <header
+    class="Header"
+  >
+    <a
+      href="/"
+    >
+      <span
+        class="Header__hidden-text"
+      >
+        Skyscanner
+      </span>
+      <img
+        alt="Skyscanner"
+        class="Header__logo-image"
+        src="/logo.svg"
+      />
+    </a>
+  </header>
+</DocumentFragment>
+`;
