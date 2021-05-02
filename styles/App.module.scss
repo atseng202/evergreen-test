@@ -1,7 +1,7 @@
-@import '~bpk-mixins';
-
+// @import '~bpk-mixins';
 .App {
   &__main {
-    padding: $bpk-spacing-sm;
+    // padding: $bpk-spacing-sm;
+    padding: 0.75rem;
   }
 }
