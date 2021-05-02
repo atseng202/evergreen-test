@@ -5,6 +5,7 @@ import Header from "./Header";
 import styles from "../styles/App.module.scss";
 
 import FlightCard from "./FlightCard";
+import Container from "react-bootstrap/Container";
 
 const getClassName = (className) => STYLES[className] || "UNKNOWN";
 
@@ -44,13 +45,14 @@ function App({ itineraries, legs }) {
   }
 
   return (
-    <div className={styles.App}>
+    <Container className={styles.App}>
       <Header />
-      <main className={styles.App__main}>
+      {/* NOTE: changed from class "main" to "Container" */}
+      <Container className={styles.App__main}>
         {/* <BpkText tagName="p">Over to you...</BpkText> */}
         {parseItineraries()}
-      </main>
-    </div>
+      </Container>
+    </Container>
   );
 }
 

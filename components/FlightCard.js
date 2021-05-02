@@ -1,4 +1,7 @@
 import LegDetail from "./LegDetail";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
 /**
  * FlightCard Component
  * FlightCard contains parsed info of individual itineraries and legs
@@ -20,18 +23,22 @@ import LegDetail from "./LegDetail";
  **/
 function FlightCard({ price, agent, totalLegs }) {
   return (
-    <div>
+    // style={{ width: "30rem" }}
+    <Card>
       {totalLegs.map((leg) => (
         <LegDetail key={leg.id} leg={leg} />
       ))}
-      <br></br>
-      {price}
-      <br></br>
-      {agent}
-      <br></br>
-      <button>Select</button>
+      <Row>
+        <Col>
+          <Row>{price}</Row>
+          <Row>{agent}</Row>
+        </Col>
+        <Col>
+          <button>Select</button>
+        </Col>
+      </Row>
       <hr></hr>
-    </div>
+    </Card>
   );
 }
 

@@ -1,3 +1,7 @@
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
 /**
  * LegDetail Component
  * Shows the departure and destination airport leg info
@@ -44,28 +48,40 @@ function LegDetail({ leg }) {
     formatZeros(arrivalDate.getMinutes());
 
   return (
-    <div>
-      <img
-        src={`https://logos.skyscnr.com/images/airlines/favicon/${leg.airline_id}.png`}
-      ></img>
-      <div>
-        {formattedDepartureDate + "\n"}
-        <br></br>
-        {leg.departure_airport}
-      </div>
-      <br></br>
-      <div>
-        {formattedArrivalDate + "\n"}
-        <br></br>
-        {leg.arrival_airport}
-      </div>
-      <br></br>
-      <div>
-        {`${hours}h ${minutes}`}
-        <br></br>
-        {leg.stops >= 1 ? leg.stops + " Stop(s)" : "Direct"}
-      </div>
-    </div>
+    <Container>
+      <Row className="pt-2 pl-3 pr-3 my-auto">
+        <Col xs={8}>
+          {/* Row with airplane icon, departure, arrow, arrival */}
+          <Row className="">
+            <img
+              className="pr-3"
+              style={{ width: "3rem", height: "3rem" }}
+              src={`https://logos.skyscnr.com/images/airlines/favicon/${leg.airline_id}.png`}
+            />
+            {/* Disable growing for the departure time and aiprot */}
+            <Col className="flex-grow-0 pr-5">
+              <Row className="py-1">{formattedDepartureDate + "\n"}</Row>
+              <Row>{leg.departure_airport}</Row>
+            </Col>
+            <img
+              className="my-auto"
+              style={{ width: "1.5rem", height: "1.5rem" }}
+              src="/long-arrow-right.svg"
+            />
+            <Col className="flex-grow-0 pl-5">
+              <Row className="py-1">{formattedArrivalDate + "\n"}</Row>
+              <Row>{leg.arrival_airport}</Row>
+            </Col>
+          </Row>
+        </Col>
+        <Col>
+          <Row className="justify-content-end py-1">{`${hours}h ${minutes}`}</Row>
+          <Row className="justify-content-end">
+            {leg.stops >= 1 ? leg.stops + " Stop(s)" : "Direct"}
+          </Row>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
