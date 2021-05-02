@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LegDetail smoke and snapshot tests matches LegDetail snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <img
+      src="https://logos.skyscnr.com/images/airlines/favicon/WZ.png"
+    />
+    <div>
+      15:35
+
+      <br />
+      BUD
+    </div>
+    <br />
+    <div>
+      17:00
+
+      <br />
+      LTN
+    </div>
+    <br />
+    <div>
+      2h 25
+      <br />
+      Direct
+    </div>
+  </div>
+</DocumentFragment>
+`;
