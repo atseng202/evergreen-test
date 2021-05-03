@@ -3,7 +3,7 @@
 exports[`App smoke and snapshot tests matches App snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="App"
+    class="App container"
   >
     <header
       class="Header"
@@ -23,69 +23,208 @@ exports[`App smoke and snapshot tests matches App snapshot 1`] = `
         />
       </a>
     </header>
-    <main
-      class="App__main"
+    <div
+      class="App__main container"
     >
-      <div>
-        <div>
-          <img
-            src="https://logos.skyscnr.com/images/airlines/favicon/WZ.png"
-          />
-          <div>
-            15:35
+      <style
+        type="text/css"
+      >
+        
+        .btn-custom {
+          background-color: #00a698;
+          color: white;
+        }
+      
+      </style>
+      <div
+        class="FlightCard card"
+      >
+        <div
+          class="LegDetail container"
+        >
+          <div
+            class="pt-2 pl-3 pr-3 my-auto row"
+          >
+            <div
+              class="col-10"
+            >
+              <div
+                class="LegDetail__dateInfo row"
+              >
+                <img
+                  alt="WZ"
+                  class="pr-2 my-auto LegDetail__airlineLogo"
+                  src="https://logos.skyscnr.com/images/airlines/favicon/WZ.png"
+                />
+                <div
+                  class="flex-grow-0 pr-4 col"
+                >
+                  <div
+                    class="py-1 row"
+                  >
+                    15:35
 
-            <br />
-            BUD
-          </div>
-          <br />
-          <div>
-            17:00
+                  </div>
+                  <div
+                    class="font-weight-light row"
+                  >
+                    BUD
+                  </div>
+                </div>
+                <img
+                  alt="arrow-right"
+                  class="LegDetail__arrowRight"
+                  src="/long-arrow-right.svg"
+                />
+                <div
+                  class="flex-grow-0 pl-4 col"
+                >
+                  <div
+                    class="py-1 row"
+                  >
+                    17:00
 
-            <br />
-            LTN
-          </div>
-          <br />
-          <div>
-            2h 25
-            <br />
-            Direct
+                  </div>
+                  <div
+                    class="font-weight-light row"
+                  >
+                    LTN
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col"
+            >
+              <div
+                class="justify-content-end py-2 font-weight-light row"
+              >
+                2h 25
+              </div>
+              <div
+                class="justify-content-end LegDetail__noStops row"
+              >
+                Direct
+              </div>
+            </div>
           </div>
         </div>
-        <div>
-          <img
-            src="https://logos.skyscnr.com/images/airlines/favicon/WZ.png"
-          />
-          <div>
-            19:45
+        <div
+          class="LegDetail container"
+        >
+          <div
+            class="pt-2 pl-3 pr-3 my-auto row"
+          >
+            <div
+              class="col-10"
+            >
+              <div
+                class="LegDetail__dateInfo row"
+              >
+                <img
+                  alt="WZ"
+                  class="pr-2 my-auto LegDetail__airlineLogo"
+                  src="https://logos.skyscnr.com/images/airlines/favicon/WZ.png"
+                />
+                <div
+                  class="flex-grow-0 pr-4 col"
+                >
+                  <div
+                    class="py-1 row"
+                  >
+                    19:45
 
-            <br />
-            LTN
-          </div>
-          <br />
-          <div>
-            21:10
+                  </div>
+                  <div
+                    class="font-weight-light row"
+                  >
+                    LTN
+                  </div>
+                </div>
+                <img
+                  alt="arrow-right"
+                  class="LegDetail__arrowRight"
+                  src="/long-arrow-right.svg"
+                />
+                <div
+                  class="flex-grow-0 pl-4 col"
+                >
+                  <div
+                    class="py-1 row"
+                  >
+                    21:10
 
-            <br />
-            BUD
-          </div>
-          <br />
-          <div>
-            2h 25
-            <br />
-            Direct
+                  </div>
+                  <div
+                    class="font-weight-light row"
+                  >
+                    BUD
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col"
+            >
+              <div
+                class="justify-content-end py-2 font-weight-light row"
+              >
+                2h 25
+              </div>
+              <div
+                class="justify-content-end LegDetail__noStops row"
+              >
+                Direct
+              </div>
+            </div>
           </div>
         </div>
-        <br />
-        £35
-        <br />
-        Wizzair.com
-        <br />
-        <button>
-          Select
-        </button>
-        <hr />
+        <div
+          class="pt-3 container"
+        >
+          <div
+            class="px-3 pb-3 justify-content-end row"
+          >
+            <div
+              class="col"
+            >
+              <div
+                class="font-weight-bold row"
+              >
+                <h2
+                  class="mb-0"
+                >
+                  £35
+                </h2>
+              </div>
+              <div
+                class="FlightCard__agentText text-secondary font-weight-light row"
+              >
+                Wizzair.com
+              </div>
+            </div>
+            <div
+              class="col"
+            >
+              <div
+                class="justify-content-end pr-2 pt-3 row"
+              >
+                <button
+                  class="px-5 btn btn-custom btn-lg"
+                  type="button"
+                >
+                  <h4
+                    class="my-0"
+                  >
+                    Select
+                  </h4>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </main>
+    </div>
   </div>
 </DocumentFragment>
 `;

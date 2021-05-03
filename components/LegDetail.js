@@ -71,6 +71,7 @@ function LegDetail({ leg }) {
             <img
               className={`pr-2 my-auto ${styles.LegDetail__airlineLogo}`}
               src={`https://logos.skyscnr.com/images/airlines/favicon/${leg.airline_id}.png`}
+              alt={leg.airline_id}
             />
             {/* Disable growing for the departure time and aiprot */}
             <Col className="flex-grow-0 pr-4">
@@ -80,6 +81,7 @@ function LegDetail({ leg }) {
             <img
               className={styles.LegDetail__arrowRight}
               src="/long-arrow-right.svg"
+              alt="arrow-right"
             />
             <Col className="flex-grow-0 pl-4">
               <Row className="py-1">{formattedArrivalDate + "\n"}</Row>
