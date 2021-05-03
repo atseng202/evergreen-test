@@ -52,7 +52,7 @@ function LegDetail({ leg }) {
       <Row className="pt-2 pl-3 pr-3 my-auto">
         <Col xs={8}>
           {/* Row with airplane icon, departure, arrow, arrival */}
-          <Row className="">
+          <Row>
             <img
               className="pr-3"
               style={{ width: "3rem", height: "3rem" }}

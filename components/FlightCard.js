@@ -1,7 +1,10 @@
 import LegDetail from "./LegDetail";
+import styles from "../styles/FlightCard.module.scss";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
 /**
  * FlightCard Component
  * FlightCard contains parsed info of individual itineraries and legs
@@ -23,22 +26,38 @@ import Card from "react-bootstrap/Card";
  **/
 function FlightCard({ price, agent, totalLegs }) {
   return (
-    // style={{ width: "30rem" }}
-    <Card>
-      {totalLegs.map((leg) => (
-        <LegDetail key={leg.id} leg={leg} />
-      ))}
-      <Row>
-        <Col>
-          <Row>{price}</Row>
-          <Row>{agent}</Row>
-        </Col>
-        <Col>
-          <button>Select</button>
-        </Col>
-      </Row>
-      <hr></hr>
-    </Card>
+    <>
+      <style type="text/css">
+        {`
+        .btn-custom {
+          background-color: #00a698;
+          color: white;
+        }
+      `}
+      </style>
+      <Card className={styles.FlightCard}>
+        {totalLegs.map((leg) => (
+          <LegDetail key={leg.id} leg={leg} />
+        ))}
+        <Container className="pt-3">
+          <Row className="px-3 pb-3 justify-content-end">
+            <Col>
+              <Row className="font-weight-bold">
+                <h2 className="mb-0">{price}</h2>
+              </Row>
+              <Row className="text-secondary font-weight-light">{agent}</Row>
+            </Col>
+            <Col className="">
+              <Row className="justify-content-end pr-2 pt-3">
+                <Button variant="custom" size="lg" className="px-5">
+                  <h4 className="my-0">Select</h4>
+                </Button>
+              </Row>
+            </Col>
+          </Row>
+        </Container>
+      </Card>
+    </>
   );
 }
 
