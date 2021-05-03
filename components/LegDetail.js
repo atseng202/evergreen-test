@@ -2,6 +2,7 @@ import styles from "../styles/LegDetail.module.scss";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { formatZeros, getStopsText } from "../utils/utils";
 import Card from "react-bootstrap/Card";
 /**
  * LegDetail Component
@@ -20,31 +21,6 @@ import Card from "react-bootstrap/Card";
  * for airline logos for each leg
  **/
 function LegDetail({ leg }) {
-  /**
-   * Custom helper method to add leading 0 for hours and minutes
-   * less than 0
-   **/
-  function formatZeros(time) {
-    if (time < 10) {
-      return `0${time}`;
-    }
-    return time;
-  }
-
-  /**
-   * Helper method returns text regarding number of stops
-   * for this leg
-   */
-  function getStopsText(leg) {
-    if (leg.stops == 0) {
-      return "Direct";
-    } else if (leg.stops == 1) {
-      return leg.stops + " Stop";
-    } else {
-      return leg.stops + " Stops";
-    }
-  }
-
   const hours = Math.floor(leg.duration_mins / 60);
   const minutes = leg.duration_mins % 60;
 
