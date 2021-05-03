@@ -10,6 +10,7 @@ The following libraries were added to the frontend besides React.
 4. React Testing library was used (@testing-library/jest-dom and @testing-library/react) for unit and integration tests of the components.
 5. identity-obj-proxy was added so that SCSS imports would not break during jest tests.
 6. jest was used for testing.
+7. babel-jest was added for integration with jest testing.
 
 ### Q) What's the command to start the application locally?
 
