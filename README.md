@@ -1,34 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Evergreen Test (Taken from Skyscanner Full Stack Recruitment Test)
 
-## Getting Started
+Thanks for taking the time to do our front-end / full-stack coding test. The challenge has two parts:
 
-First, run the development server:
+1. a [task](#task) to create a basic flight results front-end site to show flight prices
 
-```bash
-npm run dev
-# or
-yarn dev
+2. some [follow-up questions](./FOLLOW-UP.md)
+
+---
+
+You will be graded based on the following have been met:
+
+- Your implementation works as described in the [task](#task).
+
+- Your solution looks like the provided [design](#design).
+
+---
+
+## Task
+
+We have placed a number of helpful todos inside the code (see `index.js` and `App.jsx`) to help get you started, the main items we are looking for are:
+
+- Fetch flight results from the provided `flights.json` and format them into client readable results.
+
+  - You are not required to serve this separately from the dev server (i.e. `npm start`).
+
+- Use the returned data to display a page of results that matches the given design.
+  - Times should be displayed in 24 hour format.
+
+## Design
+
+We've provided a [design](./designs/results-small.png) for small-screens (480px). Don't worry about tackling larger breakpoints, but **please make sure your solution looks good at 480px in portrait orientation**.
+
+The design shows a look and feel defined in our [styleguide](https://backpack.github.io/). Feel free to import our React components into your project, or lift colours and things directly from the styleguide pages. We also have some auto-generated [sassdoc](https://backpack.github.io/sassdoc/) that may help.
+
+**NB:** You don't have to use our styleguide or our components -- picking colours from the image and rolling your own css to save time is absolutely fine.
+
+For the airline logos, insert the airline id to the following url: `https://logos.skyscnr.com/images/airlines/favicon/{id}.png`
+
+## Client implementation
+
+We'd like you to use [React](https://facebook.github.io/react/). On top of that, use whatever front-end libraries you feel comfortable with.
+
+This app is built using Next JS and React-Bootstrap instead of Backpack's stylesheet and mixins.
+
+## Flight results
+
+The provided `flights` `json` will return two collections of different items:
+
+- **Itineraries** - These are the containers for your trips, tying together **Legs**, and **prices**. Prices are offered by an **agent** - an airline or travel agent.
+
+- **Legs** - These are journeys (outbound, return) with **duration**, **stops** and **airlines**.
+
+A good structure to represent trip options would be hierarchical:
+
+```
+Itineraries
+  Legs
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Running the project
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+To startup the frontend client run the following command.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- `npm start` - This will start the application for development
+- `npm run build` - Will create a production optimised build
+- `npm test` - Will run the front end tests
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Submission Guidelines
 
-## Learn More
+- The zip file should be named {yourname}.zip, and should itself contain the full-stack-recruitment-test project folder with your submission.
 
-To learn more about Next.js, take a look at the following resources:
+- The zip file should contain the [FOLLOW-UP.md](./FOLLOW-UP.md) file with answers to the follow-up questions.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- The zip file should **not** include the `node_modules` folder.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Inspiration for the test format taken with ❤️ from [JustEat's recruitment test](https://github.com/justeat/JustEat.RecruitmentTest).
