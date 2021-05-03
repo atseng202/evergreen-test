@@ -23,7 +23,7 @@ import flights from "../public/flights.json";
  **/
 function Home({ itineraries, legs }) {
   return (
-    <div className={styles.container}>
+    <div className={styles.Home}>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
