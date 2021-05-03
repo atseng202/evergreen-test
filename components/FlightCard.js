@@ -40,10 +40,10 @@ function FlightCard({ price, agent, totalLegs }) {
           <LegDetail key={leg.id} leg={leg} />
         ))}
         <Container className="pt-3">
-          <Row className="px-3 pb-3 justify-content-end">
+          <Row className="px-3 pb-4 justify-content-end">
             <Col>
               <Row className="font-weight-bold">
-                <h2 className="mb-0">{price}</h2>
+                <h3 className="mb-0">{price}</h3>
               </Row>
               <Row className="text-secondary font-weight-light">{agent}</Row>
             </Col>
