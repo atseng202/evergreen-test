@@ -1,3 +1,4 @@
+import styles from "../styles/LegDetail.module.scss";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -30,6 +31,20 @@ function LegDetail({ leg }) {
     return time;
   }
 
+  /**
+   * Helper method returns text regarding number of stops
+   * for this leg
+   */
+  function getStopsText(leg) {
+    if (leg.stops == 0) {
+      return "Direct";
+    } else if (leg.stops == 1) {
+      return leg.stops + " Stop";
+    } else {
+      return leg.stops + " Stops";
+    }
+  }
+
   const hours = Math.floor(leg.duration_mins / 60);
   const minutes = leg.duration_mins % 60;
 
@@ -48,36 +63,40 @@ function LegDetail({ leg }) {
     formatZeros(arrivalDate.getMinutes());
 
   return (
-    <Container>
+    <Container className={styles.LegDetail}>
       <Row className="pt-2 pl-3 pr-3 my-auto">
-        <Col xs={8}>
+        <Col xs={10}>
           {/* Row with airplane icon, departure, arrow, arrival */}
-          <Row>
+          <Row className={styles.LegDetail__dateInfo}>
             <img
-              className="pr-3"
-              style={{ width: "3rem", height: "3rem" }}
+              className={`pr-2 my-auto ${styles.LegDetail__airlineLogo}`}
               src={`https://logos.skyscnr.com/images/airlines/favicon/${leg.airline_id}.png`}
             />
             {/* Disable growing for the departure time and aiprot */}
-            <Col className="flex-grow-0 pr-5">
+            <Col className="flex-grow-0 pr-4">
               <Row className="py-1">{formattedDepartureDate + "\n"}</Row>
-              <Row>{leg.departure_airport}</Row>
+              <Row className="font-weight-light">{leg.departure_airport}</Row>
             </Col>
             <img
-              className="my-auto"
-              style={{ width: "1.5rem", height: "1.5rem" }}
+              className={styles.LegDetail__arrowRight}
               src="/long-arrow-right.svg"
             />
-            <Col className="flex-grow-0 pl-5">
+            <Col className="flex-grow-0 pl-4">
               <Row className="py-1">{formattedArrivalDate + "\n"}</Row>
-              <Row>{leg.arrival_airport}</Row>
+              <Row className="font-weight-light">{leg.arrival_airport}</Row>
             </Col>
           </Row>
         </Col>
         <Col>
-          <Row className="justify-content-end py-1">{`${hours}h ${minutes}`}</Row>
-          <Row className="justify-content-end">
-            {leg.stops >= 1 ? leg.stops + " Stop(s)" : "Direct"}
+          <Row className="justify-content-end py-2 font-weight-light">{`${hours}h ${minutes}`}</Row>
+          <Row
+            className={`justify-content-end ${
+              leg.stops > 0
+                ? styles.LegDetail__oneOrMoreStops
+                : styles.LegDetail__noStops
+            }`}
+          >
+            {getStopsText(leg)}
           </Row>
         </Col>
       </Row>

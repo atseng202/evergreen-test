@@ -1,0 +1,30 @@
+$color-direct: #20b2a5;
+$color-stops: #de7688;
+
+.LegDetail {
+  font-size: 1rem;
+
+  &__dateInfo {
+    font-size: 1.1rem;
+  }
+
+  &__airlineLogo {
+    height: 50px;
+    object-fit: cover;
+  }
+
+  &__arrowRight {
+    opacity: 0.4;
+    margin: auto 0;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &__noStops {
+    color: $color-direct;
+  }
+
+  &__oneOrMoreStops {
+    color: $color-stops;
+  }
+}

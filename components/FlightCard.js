@@ -40,12 +40,16 @@ function FlightCard({ price, agent, totalLegs }) {
           <LegDetail key={leg.id} leg={leg} />
         ))}
         <Container className="pt-3">
-          <Row className="px-3 pb-4 justify-content-end">
+          <Row className="px-3 pb-3 justify-content-end">
             <Col>
               <Row className="font-weight-bold">
-                <h3 className="mb-0">{price}</h3>
+                <h2 className="mb-0">{price}</h2>
               </Row>
-              <Row className="text-secondary font-weight-light">{agent}</Row>
+              <Row
+                className={`${styles.FlightCard__agentText} text-secondary font-weight-light`}
+              >
+                {agent}
+              </Row>
             </Col>
             <Col className="">
               <Row className="justify-content-end pr-2 pt-3">
