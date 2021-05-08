@@ -63,7 +63,7 @@ Itineraries
 To startup the frontend client run the following command.
 
 - `npm install` - Install all the dependencies
-- `npm start` - This will start the application for development
+- `npm run dev` - This will start the application for development environment
 - `npm run build` - Will create a production optimised build
 - `npm test` - Will run the front end tests
 
