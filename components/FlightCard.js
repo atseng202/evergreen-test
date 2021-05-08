@@ -32,6 +32,8 @@ function FlightCard({ price, agent, totalLegs }) {
         .btn-custom {
           background-color: #00a698;
           color: white;
+          width: 140px;
+          padding: 1rem 2 rem;
         }
       `}
       </style>
@@ -41,8 +43,10 @@ function FlightCard({ price, agent, totalLegs }) {
         ))}
         <Container className="pt-3">
           <Row className="px-3 pb-3 justify-content-end">
-            <Col>
-              <Row className="font-weight-bold">
+            <Col xs={6}>
+              <Row
+                className={`${styles.FlightCard__agentPrice} font-weight-bold`}
+              >
                 <h2 className="mb-0">{price}</h2>
               </Row>
               <Row
@@ -51,9 +55,12 @@ function FlightCard({ price, agent, totalLegs }) {
                 {agent}
               </Row>
             </Col>
-            <Col className="">
+            <Col xs={6}>
               <Row className="justify-content-end pr-2 pt-3">
-                <Button variant="custom" size="lg" className="px-5">
+                <Button
+                  variant="custom"
+                  className={`${styles.FlightCard__selectBtn}`}
+                >
                   <h4 className="my-0">Select</h4>
                 </Button>
               </Row>
